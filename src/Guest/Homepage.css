@@ -1,0 +1,541 @@
+:root {
+    --primaryColor: #28ba00;
+    --whiteColor: #fff;
+    --blackColor: #333;
+    --greyColor: #f6f8fa;
+    --yellowColor: #ffd723;
+    --labelColor:  #40e82a;
+}
+
+* {
+    width:auto;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Nunito', sans-serif
+}
+
+.header-title {
+    line-height: 1.5;
+}
+
+.navbar {
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem 2.5rem;
+    z-index: 10;
+    color: var(--whiteColor);
+    background: transparent;
+}
+
+.navbar-logo > a {
+    letter-spacing: 2.5;
+    text-decoration: none;
+    color: var(--primaryColor);
+}
+
+.careersearch {
+    color: var(--whiteColor);  
+}
+
+
+.navbar-menu {
+    width: 600px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    
+
+}
+
+.navbar-menu > a {
+    color: var(--whiteColor);
+    text-decoration: none;
+}
+
+.navbar-menu-item:hover {
+    color: var(--primaryColor);
+}
+
+.menu-toggle {
+    display: block;
+}
+
+.navbar-menu .bar {
+    width: 15px;
+    height: 2px;
+    margin: 3px auto;
+    transition: all 0.3 ease-in-out;
+    background-color: var(--whiteColor);
+    cursor: pointer;
+}
+
+.mainheader {
+    width: 100%;
+    height: 80vh;
+    background-image: url("https://fjwp.s3.amazonaws.com/blog/wp-content/uploads/2020/10/18102557/social-media-job-search-1024x512.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.header-title {
+    position: relative;
+    top: 7rem;
+    left: 3rem;
+    letter-spacing: 3;
+    font-weight: bolder;
+    font-size: 52px;
+    color: var(--whiteColor);
+    text-shadow: 4px 2px 0px rgba(0,0,0,0.2);
+}
+
+.header-title > span {
+    color: var(--primaryColor);
+}
+
+.search-wrapper {
+    width: 70vw;
+    margin: auto;
+    min-width: 300px;
+    height: 3.5rem;
+    position: relative;
+}
+
+.search-box {
+    width: 100%;
+    position: relative;
+    background-color: var(--greyColor);
+    box-shadow: rgba(2,11,20,0.2) 0px 5px 15px;
+    top: -60%;
+    height: 100%;
+
+}
+
+.search-card {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.search-input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    padding-left: 10px;
+}
+
+.search-button {
+    width: 200px;
+    background: var(--primaryColor);
+    border-radius: 5px;
+    border: none;
+    color: var(--whiteColor);
+    cursor: pointer;
+    margin: 10px;
+}
+
+.filter-box {
+    width: 100%;
+    height: auto;
+    font-size: 0.8rem;
+    width: 60%;
+    min-width: 300px;
+    margin: auto;
+}
+
+.filter-dropdown {
+    width: 100%;
+    border-bottom: 1px solid var(--labelColor);
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.filter-select {
+    border: none;
+    padding: 0.2rem;
+}
+.filter-select:hover {
+    background-color: var(--greyColor);
+}
+
+.filter-chosen {
+    width: 100%;
+    padding: 0.3rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.chosen-card {
+    background: var(--primaryColor);
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    color: var(--whiteColor);
+    cursor: pointer;
+}
+
+.job-list {
+    margin: 5%;
+    padding: 1rem;
+    background-color: var(--greyColor);
+}
+
+.job-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 1rem;
+    min-height: 200px;
+    align-items: center;
+    background-color: var(--whiteColor);
+    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+    cursor: pointer;
+}
+.job-card:hover {
+    box-shadow: rgba(16, 16, 16, 0.578) 0px 8px 12px;
+}
+
+.job-name {
+    display: flex;
+}
+
+.job-profile {
+    width: 190px;
+    height: 180px;
+    margin: 0.5rem;
+    border-radius: 0px 40px 0px;
+    padding-left: 25px;
+}
+
+.job-detail {
+    padding: 0 10px;
+    padding-left: 30px;
+    padding-top: 50px;
+}
+
+.job-detail > h4 {
+    color: var(--primaryColor);
+    font-size: 0.9rem;
+}
+
+.job-detail > p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+   
+}
+
+.job-label {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.job-label > a {
+    padding: 0 1rem;
+    margin: 0.2rem;
+    color: var(--whiteColor);
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.label-a {
+    background-color: var(--labelColor);
+}
+
+.label-b {
+    background-color: var(--yellowColor);
+}
+
+.label-c {
+    background-color: var(--blackColor);
+}
+
+.job-posted {
+    font-size: 0.8rem;
+}
+
+.job-more {
+    display: block;
+    background-color: #f4f7f7;
+    padding: 0.3rem 2rem;
+    margin: 20px auto;
+    width: 250px;
+    color: var(--primaryColor);
+    border-radius: 10px;
+    border: 1px solid var(--primaryColor);
+    cursor: pointer;
+}
+
+.job-more:hover {
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+}
+
+.job-posted {
+font-size: 1rem;
+}
+
+.join {
+    
+    height: 350px;
+    background-image: url("https://www.morganhunter.com/wp-content/uploads/2019/02/iStock-866440974-1024x683.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--whiteColor);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    align-items: center;
+    position: relative;
+}
+
+.join::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(8, 189, 35, 0.625),rgba(70, 219, 112, 0.6) 100%),
+    linear-gradient(180deg, rgba(50, 159, 88, 0.65) 0%, transparent 100%);
+    z-index: 1;
+}
+
+.join-detail {
+    min-width: 280px;
+    width: 50%;
+    z-index: 2;
+    margin-bottom: 1rem;
+}
+
+.join-detail > h1 {
+    font-size: 36px;
+    letter-spacing: 2;
+}
+
+.join-button {
+    width: 200px;
+    padding: 1rem;
+    border: none;
+    color: var(--blackColor);
+    background-color: var(--yellowColor);
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.join-button:hover {
+    background: var(--blackColor);
+    border: none;
+    border-radius: 15px;
+    color: var(--whiteColor);
+}
+
+.featured {
+    width:auto;
+    height: auto;
+    text-align: center;
+    padding: 5rem 1rem;
+    background-color: var(--greyColor);
+}
+
+.section-title {
+    margin-bottom: 0.5rem;
+    letter-spacing: 1.5;
+    font-size: 36px;
+}
+
+.featured-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    padding: 2% 10%;
+}
+
+.featured-card {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 10px;
+    align-items: center;
+    background-color: var(--whiteColor);
+    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+    height: 100px;
+}
+
+.featured-card:hover {
+    box-shadow: rgba(16, 16, 16, 0.578) 0px 8px 8px;
+}
+
+.featured-image {
+    height: 30px;
+    margin-bottom: 0.2rem;
+}
+
+.featured-btn {
+    border: 1px solid var(--primaryColor);
+    border-radius: 5px;
+    background-color: transparent;
+    margin: 0.5rem;
+    padding: 3px 10px;
+    cursor: pointer;
+    color: var(--labelColor);
+}
+
+.featured-btn:hover{
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+}
+
+/* testimonial */
+
+.testimonial{
+    background:#f4f7f7;
+    align-items: center;
+    padding-right: 0px;
+    
+}
+
+.client-testimonial-slider{
+    margin-top:2.5rem;
+    text-align:center;
+}
+
+.client-testimonial{
+    text-align:center;
+    margin: 60px 10px 0;
+    padding: 0 10% 4%;
+    background:#fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    -o-shadow:0 0 10px 0 rgba(0,0,0,0.1)
+}
+
+.client-testimonial .pic{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    border-bottom:2px solid #07b107;
+    display:inline-block;
+    margin-top:-50px;
+    overflow:hidden;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15)
+}
+.client-testimonial .pic img{
+    width:100%;
+    height:auto
+}
+.client-testimonial .client-description{
+    font-size:14px;
+    color:#707c88;
+    line-height:1.7;
+    margin:10px 0 5px
+}
+.client-testimonial .client-testimonial-title{
+    font-size:14px;
+    font-weight:600;
+    margin:0
+}
+.client-testimonial .client-testimonial-rating{
+    margin:0 0 15px;
+    padding:0;
+    list-style:none
+}
+.client-testimonial .client-testimonial-rating li{
+    color:#ff9800;
+    display:inline-block
+}
+.client-testimonial .client-testimonial-rating li.unfill{
+    color:#d3d7e2
+}
+.container1 {
+    width:auto;
+    height: auto;
+    text-align: center;
+    padding: 5rem 1rem;
+    background-color: var(--greyColor);
+}
+.main-heading > p {
+    color:var(--primaryColor);
+    font-size: 36px;
+    font-weight: 600;
+}
+.main-heading > h2 {
+    color: var(--blackColor);
+}
+.row2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    
+    padding: 5% 10%;
+}
+
+.footer {
+    width:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--blackColor);
+    color: var(--whiteColor);
+    padding: 3rem;
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.footer-wrapper h3,.footer-wrapper h4 {
+    line-height: 3;
+    color: var(--yellowColor);
+}
+
+.footer-wrapper p {
+    max-width: 400px;
+    line-height: 1.5;
+
+}
+
+.social-media {
+    margin-top: 1rem;
+}
+
+.social-media  a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: var(--greyColor);
+}
+
+.footer-wrapper a {
+    color: var(--greyColor);
+    line-height: 2;
+    text-decoration: none;
+}
+
+.footer-wrapper a:hover {
+    text-decoration: underline;
+}

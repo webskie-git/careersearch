@@ -1,0 +1,230 @@
+:root {
+    --primaryColor: #28ba00;
+    --whiteColor: #fff;
+    --blackColor: #333;
+    --greyColor: #f6f8fa;
+    --yellowColor: #ffd723;
+    --labelColor:  #40e82a;
+}
+* {
+    width:auto;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Nunito', sans-serif
+}
+.header-title {
+    line-height: 1.5;
+}
+.navbar {
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem 2.5rem;
+    z-index: 10;
+    color: var(--whiteColor);
+    background: transparent;
+}
+
+.navbar-logo > a {
+    letter-spacing: 2.5;
+    text-decoration: none;
+    color: var(--primaryColor);
+}
+
+.careersearch {
+    color: var(--whiteColor);  
+}
+
+
+.navbar-menu {
+    width: 600px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    
+
+}
+
+.navbar-menu > a {
+    color: var(--whiteColor);
+    text-decoration: none;
+}
+
+.navbar-menu-item:hover {
+    color: var(--primaryColor);
+}
+.btnLogout {
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bolder;
+   
+}
+.btnLogout:hover {
+    background-color: var(--whiteColor);
+    color: red;
+    border: 1px solid red;
+}
+
+.menu-toggle {
+    display: block;
+}
+
+.navbar-menu .bar {
+    width: 15px;
+    height: 2px;
+    margin: 3px auto;
+    transition: all 0.3 ease-in-out;
+    background-color: var(--whiteColor);
+    cursor: pointer;
+}
+.mainheaderseeker {
+    width: 100%;
+    height: 80vh;
+    background-image: url("https://media.istockphoto.com/id/1354251234/photo/online-and-modern-technologies-for-simplifying-the-human-resources-system-human-resource.jpg?s=612x612&w=0&k=20&c=_tq_h7CI88udHm1TkG8VFb1u3i_TUlUVmDZKmGQDVyQ=");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.featured {
+    width:auto;
+    height: auto;
+    text-align: center;
+    padding: 5rem 1rem;
+    background-color: var(--greyColor);
+}
+
+.section-title {
+    margin-bottom: 0.5rem;
+    letter-spacing: 1.5;
+    font-size: 36px;
+}
+
+.featured-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    padding: 2% 10%;
+}
+
+.featured-card {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 10px;
+    align-items: center;
+    background-color: var(--whiteColor);
+    box-shadow: rgba(0,0,0,0.16) 0px 1px 4px;
+    height: 100px;
+}
+
+.featured-card > p {
+    align-items: center;
+}
+
+.featured-card:hover {
+    box-shadow: rgba(16, 16, 16, 0.578) 0px 8px 8px;
+}
+
+.featured-image {
+    height: 50px;
+    margin-bottom: 0.2rem;
+padding-top: 10px;
+}
+
+.featured-btn {
+    border: 1px solid var(--primaryColor);
+    border-radius: 5px;
+    background-color: transparent;
+    margin: 0.5rem;
+    padding: 3px 10px;
+    cursor: pointer;
+    color: var(--labelColor);
+}
+
+.featured-btn:hover{
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+}
+
+
+.footer {
+    width:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--blackColor);
+    color: var(--whiteColor);
+    padding: 3rem;
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.footer-wrapper h3,.footer-wrapper h4 {
+    line-height: 3;
+    color: var(--yellowColor);
+}
+
+.footer-wrapper p {
+    max-width: 400px;
+    line-height: 1.5;
+
+}
+
+.social-media {
+    margin-top: 1rem;
+}
+
+.social-media  a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: var(--greyColor);
+}
+
+.footer-wrapper a {
+    color: var(--greyColor);
+    line-height: 2;
+    text-decoration: none;
+}
+
+.footer-wrapper a:hover {
+    text-decoration: underline;
+}
+
+.apply-button{
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid;
+    background-color: var(--yellowColor);
+    color: var(--blackColor);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bolder;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: 50px;
+}
+.apply-button:hover {
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    border: 1px solid black;
+}

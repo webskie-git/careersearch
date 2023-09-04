@@ -1,0 +1,60 @@
+.main {
+    background-color: #aeadad;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 100vh;
+}
+
+.add-city-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 600px;
+    margin-left: 300px;
+    margin-top: 40px;
+    background-color: #d8d4d4;
+    border-radius: 50px;
+    color: #343535;
+
+}
+@media (max-width: 768px) {
+    .add-city-form {
+        width: 80%; 
+        margin: 40px auto; 
+    }
+}
+
+.add-city-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+
+
+.btn-a {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.table {
+    background-color: #eeebeb;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.btn-a:hover {
+    background-color: #0056b3;
+}

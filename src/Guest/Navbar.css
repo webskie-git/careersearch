@@ -1,0 +1,10 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    /* Add other styling properties */
+  }
