@@ -125,6 +125,7 @@ export default function CompanyRegistration() {
               <div className='inputbox'>
                 <i class="fa-solid fa-location-dot"></i>
                 <select value={city} onChange={(e) => setCity(e.target.value)} className='city-select' name="location" >
+                  <option className='city-option' value="">---Select----</option>
                   <option className='city-option' value="INDIA">INDIA</option>
                   <option className='city-option' value="US">US</option>
                   <option className='city-option' value="UK">UK</option>
