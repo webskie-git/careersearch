@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import './dashboard.css'
 import { MdAssuredWorkload } from "react-icons/md";
 import { FaAngellist } from "react-icons/fa";
@@ -26,8 +26,10 @@ export default function Dashboard() {
   const [companyCount, setCompanyCount] = useState();
   const [jobLists, setJobLists] = useState();
 
+  const navigate = useNavigate();
 
   useEffect(() => {
+
     getCount();
   }, []);
 
@@ -45,8 +47,14 @@ export default function Dashboard() {
   }
   const logoutAdmin = () => {
     sessionStorage.removeItem('aid');
-    window.location.href = '/';
+    navigate('/');
   }
+
+  useEffect(() => {
+    if (!sessionStorage.getItem('aid')) {
+      navigate('/');
+    }
+  }, [navigate]);
 
 
   return (

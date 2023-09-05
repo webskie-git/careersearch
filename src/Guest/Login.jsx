@@ -19,7 +19,9 @@ export default function Login() {
     e.preventDefault();
 
     if (email === "admin@gmail.com" && password === "admin@123") {
+      sessionStorage.setItem("aid", email);
       navigate("/Admin");
+      
     } else {
       try {
         const loginDetails = await signInWithEmailAndPassword(

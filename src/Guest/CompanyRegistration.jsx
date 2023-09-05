@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Register.css";
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, getDocs } from 'firebase/firestore';
 import { auth, db, storage } from '../config/firebase';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -20,7 +20,24 @@ export default function CompanyRegistration() {
   const [redirect, setRedirect] = useState(false)
   const [city, setCity] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [cities, setCities] = useState([]);
 
+
+  useEffect(() => {
+    async function loadCities() {
+      const cityData = await fetchCities();
+      setCities(cityData);
+    }
+    loadCities();
+  }, []);
+
+
+  async function fetchCities() {
+    const citiesRef = collection(db, 'city');
+    const citiesSnapshot = await getDocs(citiesRef);
+  
+    return citiesSnapshot.docs.map((doc) => doc.data().name);
+  }
 
 
   const userCollectionRef = collection(db, "companies");
@@ -125,11 +142,13 @@ export default function CompanyRegistration() {
               <div className='inputbox'>
                 <i class="fa-solid fa-location-dot"></i>
                 <select value={city} onChange={(e) => setCity(e.target.value)} className='city-select' name="location" >
-                  <option className='city-option' value="">---Select----</option>
-                  <option className='city-option' value="INDIA">INDIA</option>
-                  <option className='city-option' value="US">US</option>
-                  <option className='city-option' value="UK">UK</option>
-                </select>
+        <option className='city-option' value="">---Select----</option>
+        {cities.map((cityName, index) => (
+          <option className='city-option' key={index} value={cityName}>
+            {cityName}
+          </option>
+        ))}
+      </select>
                 <label for="">City</label>
               </div>
 
