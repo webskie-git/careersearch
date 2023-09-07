@@ -146,6 +146,8 @@ export default function Homepage() {
           <a href="#companies" className="navbar-menu-item">Companies</a>
           <a href="/Seeker/JobDetails" className="navbar-menu-item">New jobs</a>
           <a href="/Seeker/ViewApplied" className="navbar-menu-item">View Job Applications</a>
+          <a href="/Seeker/Complaints" className="navbar-menu-item">Complaints</a>
+
           <button onClick={logoutUser} className='btnLogout'>Log-Out</button>
         </div>
       </nav>
