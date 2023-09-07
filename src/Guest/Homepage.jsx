@@ -3,12 +3,14 @@ import "./Homepage.css";
 import "./Navbar.css";
 import { collection, getDocs, query } from 'firebase/firestore';
 import { db } from '../config/firebase';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Homepage() {
 
   const [companiesList, setCompaniesList] = useState([]);
   const [jobList, setJobList] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const Navigate = useNavigate()
 
   const [navbarBackground, setNavbarBackground] = useState('transparent');
 
@@ -68,6 +70,10 @@ export default function Homepage() {
         jobKeywords.includes(query)
       );
     });
+  };
+
+  const handleJoinButtonClick = () => {
+    Navigate('/Login')
   };
 
 
@@ -166,7 +172,7 @@ export default function Homepage() {
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quasi vel dolor odit, at quis consectetur
             debitis nemo ex sapiente quae quisquam animi praesentium sit exercitationem tempora. Consectetur, unde illo.</p>
         </div>
-        <button  className='join-button'>Join now</button>
+        <button onClick={handleJoinButtonClick} className='join-button'>Join now</button>
       </section>
 
       {/* featured company */}

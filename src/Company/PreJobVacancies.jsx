@@ -84,6 +84,9 @@ export default function PreJobVacancies() {
                 <div className="job-label">
                   <p>Location:{job.location}</p>
                 </div>
+                <div className="job-label">
+                  <p>Salary:{job.job_salary}</p>
+                </div>
                 <div className="job-posted">
                   <p>{job.job_level}</p>
                 </div>

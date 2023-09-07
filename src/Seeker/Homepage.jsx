@@ -118,12 +118,16 @@ export default function Homepage() {
   const filterJobs = (jobs) => {
     return jobs.filter((job) => {
       const jobTitle = (job.job_title || '').toLowerCase(); 
+      const jobType = (job.job_type || '').toLowerCase(); 
+      const jobSalary = (job.job_salary || '').toLowerCase(); 
       const jobCity = (job.location || '').toLowerCase(); 
       const jobKeywords = (job.keywords || '').toLowerCase(); 
       const query = searchQuery.toLowerCase();
 
       return (
         jobTitle.includes(query) ||
+        jobType.includes(query) ||
+        jobSalary.includes(query) ||
         jobCity.includes(query) ||
         jobKeywords.includes(query)
       );
@@ -205,7 +209,11 @@ export default function Homepage() {
                 <h4>{job.job_title}</h4>
                 <h3>{job.job_type}</h3>
                 <p>{job.job_details}</p>
+                
               </div>
+            </div>
+            <div className="job-label">
+              <p>Salary: {job.job_salary}</p>
             </div>
             <div className="job-label">
               <p>Location: {job.location}</p>

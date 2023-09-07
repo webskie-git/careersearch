@@ -43,6 +43,15 @@ export default function ViewApplications() {
         viewedByCompany: true,
       });
 
+      setUserApplications((prevApplications) => {
+        return prevApplications.map((application) => {
+          if (application.id === applicationId) {
+            return { ...application, status: 'Verified' };
+          }
+          return application;
+        });
+      });
+
       alert("Application has been verified")
       console.log(`Application ${applicationId} has been verified.`);
     } catch (error) {
@@ -136,11 +145,12 @@ function ImageViewerModal({ imageUrl, onClose }) {
             </td>
             <td className='Job-td'>{application.status}</td>
             <td className='Job-td'>
-              <button
+            <button
                 className='verify'
                 onClick={() => verifyApplication(application.id)}
+                disabled={application.status === 'Verified'} // Disable button after verification
               >
-                Verify
+                {application.status === 'Verified' ? 'Verified' : 'Verify'}
               </button>
               <button 
             className='verify' style={{marginLeft:10,marginTop:2}}

@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { db, storage } from '../config/firebase';
-import { addDoc, collection, doc, updateDoc } from 'firebase/firestore';
+import { addDoc, collection, doc, getDocs, query, updateDoc } from 'firebase/firestore';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { Navigate } from 'react-router-dom';
@@ -10,11 +10,47 @@ export default function NewJobVacancy() {
   const [jobTitle, setJobTitle] = useState('');
   const [jobDetails, setJobDetails] = useState('');
   const [jobType, setJobType] = useState('');
-  const [location, setLocation] = useState('');
   const [poster, setPoster] = useState("");
   const [redirect, setRedirect] = useState(false)
   const [jobLevel, setJobLevel] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [salary, setSalary] = useState("");
+  const [city, setCity] = useState('');
+  const [cities, setCities] = useState([]);
+  const [jobTypes, setJobTypes] = useState([]);
+
+
+  useEffect(() => {
+    async function loadCities() {
+      const cityData = await fetchCities();
+      setCities(cityData);
+    }
+    loadCities();
+  }, []);
+
+  async function fetchCities() {
+    const citiesRef = collection(db, 'city');
+    const citiesSnapshot = await getDocs(citiesRef);
+  
+    return citiesSnapshot.docs.map((doc) => doc.data().name);
+  }
+
+  useEffect(() => {
+    async function loadJobTypes() {
+      try {
+        const jobTypesQuery = query(
+          collection(db, 'jobtype'), 
+        );
+        const jobTypesSnapshot = await getDocs(jobTypesQuery);
+        const jobTypesData = jobTypesSnapshot.docs.map((doc) => doc.data().name);
+        setJobTypes(jobTypesData);
+      } catch (error) {
+        console.error('Error fetching job types:', error);
+      }
+    }
+    loadJobTypes();
+  }, []);
+
 
   const jobsCollectionRef = collection(db, "joblists");
   const storageRef = ref(storage, "posters");
@@ -34,10 +70,11 @@ export default function NewJobVacancy() {
         job_title: jobTitle,
         job_details: jobDetails,
         job_type: jobType,
-        location: location,
+        location: city,
         job_level: jobLevel,
         company_id: companyId,
         company_name: companyName,
+        job_salary:salary,
 
 
       };
@@ -58,11 +95,11 @@ export default function NewJobVacancy() {
       setJobTitle('');
       setJobDetails('');
       setJobType('');
-      setLocation('');
+      setCity('');
       setJobLevel('');
       setPoster(null);
       setIsLoading(false);
-
+      setSalary('');
 
       setRedirect(true);
 
@@ -117,30 +154,39 @@ export default function NewJobVacancy() {
                 </div>
 
                 <div className='inputbox'>
-                  <select className='city-select' value={jobType} onChange={(e) => setJobType(e.target.value)} name="jobtype" >
-                    <option className='city-option' value="#">---select---</option>
-                    <option className='city-option' value="Web Developer">Web Developer</option>
-                    <option className='city-option' value="Human Resourse Manager">Human Resourse Manager</option>
-                    <option className='city-option' value="Accoutant">Accoutant</option>
-                    <option className='city-option' value="Lawyer">Lawyer</option>
-                    <option className='city-option' value="Nuclear Engineer">Nuclear Engineer</option>
-                    <option className='city-option' value="Registered Nurse">Registered Nurse</option>
-                    <option className='city-option' value="High School Teacher">High School Teacher</option>
-                    <option className='city-option' value="Database Administrator">Database Administrator</option>
-                    <option className='city-option' value="Online Educators">Online Educators</option>
-
-                  </select>
-                  <label >Job Type :-</label>
-                </div>
+        <select
+          className='city-select'
+          value={jobType}
+          onChange={(e) => setJobType(e.target.value)}
+          name='jobtype'
+        >
+          <option className='city-option' value='#'>
+            ---select---
+          </option>
+          {jobTypes.map((jobTypeOption, index) => (
+            <option className='city-option' key={index} value={jobTypeOption}>
+              {jobTypeOption}
+            </option>
+          ))}
+        </select>
+        <label>Job Type :-</label>
+      </div>
 
                 <div className='inputbox'>
-                  <select value={location} onChange={(e) => setLocation(e.target.value)} className='city-select' name="location" >
-                    <option className='city-option' value="#">---select---</option>
-                    <option className='city-option' value="INDIA">INDIA</option>
-                    <option className='city-option' value="US">US</option>
-                    <option className='city-option' value="UK">UK</option>
-                  </select>
+                <select value={city} onChange={(e) => setCity(e.target.value)} className='city-select' name="location" >
+        <option className='city-option' value="">---Select----</option>
+        {cities.map((cityName, index) => (
+          <option className='city-option' key={index} value={cityName}>
+            {cityName}
+          </option>
+        ))}
+      </select>
                   <label >Location :-</label>
+                </div>
+
+                <div className="inputbox">
+                  <input className="inputtext" name="name" value={salary} onChange={(e) => setSalary(e.target.value)} type="text" required />
+                  <label >Job Salary :-</label>
                 </div>
 
                 <div className="inputboxfile">
