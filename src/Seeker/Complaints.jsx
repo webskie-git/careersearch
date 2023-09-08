@@ -26,6 +26,16 @@ export default function Complaints() {
         fetchComplaints();
     }, [uid]);
 
+    const logoutUser = () => {
+        sessionStorage.removeItem("uid");
+        sessionStorage.removeItem("uname");
+        sessionStorage.removeItem("uresume");
+    
+    
+        window.location.href = '/';
+    
+      };  
+
     const submitComplaint = async () => {
         try {
 
@@ -79,22 +89,34 @@ export default function Complaints() {
     };
 
     return (
-        <div>
+        <div className='Complaint-box'>
+            {/* navbar */}
+      <nav className="navbarpre" >
+        <h2 className='navbar-logo'><a href="/Seeker">CAREER <span className='careersearch'>SEARCH</span></a></h2>
+        <div className="navbar-menu justify-content-end">
+          <a href="/Seeker#jobs" className="navbar-menu-item">Jobs</a>
+          <a href="/Seeker#companies" className="navbar-menu-item">Companies</a>
+          <a href="/Seeker/JobDetails" className="navbar-menu-item">New jobs</a>
+          <a href="/Seeker/ViewApplied" className="navbar-menu-item">View Job Applications</a>
+          <button onClick={logoutUser} className='btnLogout'>Log-Out</button>
+        </div>
+      </nav>
             {/* Complaint submission form */}
-            <div>
+            <div className='complaint'>
                 <h2>Submit a Complaint</h2>
                 <textarea
+                className='complaint-txt'
                     rows="4"
                     cols="50"
                     placeholder="Write your complaint here"
                     value={complaint}
                     onChange={(e) => setComplaint(e.target.value)}
                 ></textarea>
-                <button onClick={submitComplaint}>Submit</button>
+                <button className='btn-sub' onClick={submitComplaint}>Submit</button>
             </div>
 
             {/* List of complaints and admin replies */}
-            <div>
+            <div className='reply'>
                 <h2>Complaints and Replies</h2>
                 {complaints.map((complaintItem) => (
                     <div key={complaintItem.id}>

@@ -167,41 +167,7 @@ export default function Homepage() {
           </div>
         </div>
       </div>
-      {/* filter box */}
-      <div className="filter-box">
-        <div className="filter-dropdown">
-          <select className='filter-select' name="job-level" id="job-level">
-            <option value="">Job Level</option>
-            <option value="">Entry</option>
-            <option value="">Senior</option>
-            <option value="">Director</option>
-          </select>
-          <select className='filter-select' name="job-function" id="job-function">
-            <option value="">Job Function</option>
-            <option value="">IT</option>
-            <option value="">Management</option>
-            <option value="">Education</option>
-          </select>
-          <select className='filter-select' name="employment" id="employment">
-            <option value="">Employement Type</option>
-            <option value="">Internship</option>
-            <option value="">Part Time</option>
-            <option value="">Full Time</option>
-          </select>
-          <select className='filter-select' name="location" id="location">
-            <option value="">Locations</option>
-            <option value="">Remort</option>
-            <option value="">US</option>
-            <option value="">UK</option>
-          </select>
-          <select className='filter-select' name="education" id="education">
-            <option value="">Education</option>
-            <option value="">High School</option>
-            <option value="">Bachelor's Degree</option>
-            <option value="">Master's Degree</option>
-          </select>
-        </div>
-      </div>
+      
       <section className='job-list' id='jobs'>
         {filterJobs(jobList).map((job, index) => (
           <div key={index} className="job-card">
@@ -228,12 +194,21 @@ export default function Homepage() {
           </div>
         ))}
       </section>
+      {/* join */}
+      <section className='join'>
+        <div className="join-detail">
+          <h1 className='section-title'>LET START YOUR NEW JOB WITH US</h1>
+          <p>Your first job will be filled with moments of, “I’m not sure how to do this,” or “I never learned this in school.”
+             Take a page out of the former Yahoo CEO’s book and push through the moments of uncertainty.  
+             But remember that pushing through doesn’t always mean keeping your head down and working through it. It can mean reaching out to your supervisor or coworker if you feel lost and pushing through with a little guidance.</p>
+        </div>
+      </section>
 
       {/* featured company */}
       <section className='featured' id='companies'>
         <h1 className='section-title'>Featured Companies</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Tempora voluptatibus doloribus accusantium officiis voluptatum. Qui debitis nobis, ipsum</p>
+        <p>As your digital enablement partner, we apply our talent-first approach to accelerate your digital journey, 
+          helping you unleash your potential and unlock unseen opportunities.</p>
           <div className="featured-wrapper">
           {companiesList.map((company, index) => (
 
@@ -252,9 +227,8 @@ export default function Homepage() {
       <footer className='footer'>
         <div className="footer-wrapper">
           <h3>CAREER SEARCH</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Odio exercitationem pariatur quisquam repudiandae repellendus totam enim
-            reprehenderit a perferendis non adipisci.</p>
+          <p>As your digital enablement partner,
+             we apply our talent-first approach to accelerate your digital journey, helping you unleash your potential and unlock unseen opportunities.</p>
           <div className="social-media">
             <a href="#Explore"><i className='fab fa-facebook-f'></i></a>
             <a href="#Explore"><i className='fab fa-twitter'></i></a>

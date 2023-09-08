@@ -38,8 +38,8 @@ export default function JobDetails() {
       <nav className="navbarpre" >
         <h2 className='navbar-logo'><a href="/Seeker">CAREER <span className='careersearch'>SEARCH</span></a></h2>
         <div className="navbar-menu justify-content-end">
-          <a href="#jobs" className="navbar-menu-item">Jobs</a>
-          <a href="#companies" className="navbar-menu-item">Companies</a>
+        <a href="/Seeker#jobs" className="navbar-menu-item">Jobs</a>
+          <a href="/Seeker#companies" className="navbar-menu-item">Companies</a>
           <a href="/Seeker/JobDetails" className="navbar-menu-item">New jobs</a>
           <a href="/Seeker/ViewApplied" className="navbar-menu-item">View Job Applications</a>
           <button onClick={logoutUser} className='btnLogout'>Log-Out</button>

@@ -107,41 +107,7 @@ export default function Homepage() {
           </div>
         </div>
       </div>
-      {/* filter box */}
-      <div className="filter-box">
-        <div className="filter-dropdown">
-          <select className='filter-select' name="job-level" id="job-level">
-            <option value="">Job Level</option>
-            <option value="">Entry</option>
-            <option value="">Senior</option>
-            <option value="">Director</option>
-          </select>
-          <select className='filter-select' name="job-function" id="job-function">
-            <option value="">Job Function</option>
-            <option value="">IT</option>
-            <option value="">Management</option>
-            <option value="">Education</option>
-          </select>
-          <select className='filter-select' name="employment" id="employment">
-            <option value="">Employement Type</option>
-            <option value="">Internship</option>
-            <option value="">Part Time</option>
-            <option value="">Full Time</option>
-          </select>
-          <select className='filter-select' name="location" id="location">
-            <option value="">Locations</option>
-            <option value="">Remort</option>
-            <option value="">US</option>
-            <option value="">UK</option>
-          </select>
-          <select className='filter-select' name="education" id="education">
-            <option value="">Education</option>
-            <option value="">High School</option>
-            <option value="">Bachelor's Degree</option>
-            <option value="">Master's Degree</option>
-          </select>
-        </div>
-      </div>
+
       {/* job listing */}
       <section className='job-list' id='jobs'>
       {filterJobs(jobList).map((job, index) => (
@@ -169,8 +135,8 @@ export default function Homepage() {
       <section className='join'>
         <div className="join-detail">
           <h1 className='section-title'>LET START YOUR NEW JOB WITH US</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quasi vel dolor odit, at quis consectetur
-            debitis nemo ex sapiente quae quisquam animi praesentium sit exercitationem tempora. Consectetur, unde illo.</p>
+          <p>Your first job will be filled with moments of, “I’m not sure how to do this,” or “I never learned this in school.”
+             Take a page out of the former Yahoo CEO’s book and push through the moments of uncertainty.  But remember that pushing through doesn’t always mean keeping your head down and working through it. It can mean reaching out to your supervisor or coworker if you feel lost and pushing through with a little guidance.</p>
         </div>
         <button onClick={handleJoinButtonClick} className='join-button'>Join now</button>
       </section>
@@ -178,8 +144,9 @@ export default function Homepage() {
       {/* featured company */}
       <section className='featured' id='companies'>
         <h1 className='section-title'>Featured Companies</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Tempora voluptatibus doloribus accusantium officiis voluptatum. Qui debitis nobis, ipsum</p>
+        <p>As your digital enablement partner,
+           we apply our talent-first approach to accelerate your digital journey,
+            helping you unleash your potential and unlock unseen opportunities.</p>
           <div className="featured-wrapper">
           {companiesList.map((company, index) => (
 
@@ -208,7 +175,7 @@ export default function Homepage() {
                 <div className="pic">
                   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUhOeKafTGJfok0AnWc_7KDEDdj63F_sUQQwFX11o20DbRx1S_1cIwZI8pT0tjQ7TkJ3g&usqp=CAU" alt="" />
                 </div>
-                <p className="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.</p>
+                <p className="client-description">It's always a pleasure to work with Career Search. They are personable, responsive, and results-oriented!</p>
                 <h3 className="client-testimonial-title">Lacky Mole</h3>
                 <ul className="client-testimonial-rating">
                   <li className="fa fa-star-o"></li>
@@ -220,7 +187,7 @@ export default function Homepage() {
                 <div className="pic">
                   <img src="https://media.istockphoto.com/id/1200677760/photo/portrait-of-handsome-smiling-young-man-with-crossed-arms.jpg?s=612x612&w=0&k=20&c=g_ZmKDpK9VEEzWw4vJ6O577ENGLTOcrvYeiLxi8mVuo=" alt="" />
                 </div>
-                <p className="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.</p>
+                <p className="client-description">Always available to answer any questions. Very knowledgeable about the services they provide. Would recommend to anyone!</p>
                 <h3 className="client-testimonial-title">Karan Wessi</h3>
                 <ul className="client-testimonial-rating">
                   <li className="fa fa-star-o"></li>
@@ -232,7 +199,7 @@ export default function Homepage() {
                 <div className="pic">
                   <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-774909.jpg&fm=jpg" alt="" />
                 </div>
-                <p className="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.</p>
+                <p className="client-description">Great results. Enjoyable to work with, and most importantly, enabled us to have the presence on the web we needed to conduct business in today's market.</p>
                 <h3 className="client-testimonial-title">Roul Pinchai</h3>
                 <ul className="client-testimonial-rating">
                   <li className="fa fa-star-o"></li>
@@ -244,7 +211,7 @@ export default function Homepage() {
                 <div className="pic">
                   <img src="https://thumbs.dreamstime.com/b/portrait-charming-european-girl-years-old-has-beautiful-wavy-loose-hair-182448296.jpg" alt="" />
                 </div>
-                <p className="client-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.</p>
+                <p className="client-description">I'm incredibly impressed with Career Search. Our developer communicates with me every day, and is a very powerful coder. He's a true professional and his work is just excellent.</p>
                 <h3 className="client-testimonial-title">Adam Jinna</h3>
                 <ul className="client-testimonial-rating">
                   <li className="fa fa-star-o"></li>
@@ -260,9 +227,8 @@ export default function Homepage() {
       <footer className='footer'>
         <div className="footer-wrapper">
           <h3>CAREER SEARCH</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Odio exercitationem pariatur quisquam repudiandae repellendus totam enim
-            reprehenderit a perferendis non adipisci.</p>
+          <p>As your digital enablement partner, we apply our talent-first approach to accelerate your digital journey,
+             helping you unleash your potential and unlock unseen opportunities.</p>
           <div className="social-media">
             <a href="#Explore"><i className='fab fa-facebook-f'></i></a>
             <a href="#Explore"><i className='fab fa-twitter'></i></a>

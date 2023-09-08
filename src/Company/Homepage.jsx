@@ -111,8 +111,8 @@ export default function Homepage() {
       {/* featured company */}
       <section className='featured' id='companies'>
         <h1 className='section-title'>Featured Companies</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Tempora voluptatibus doloribus accusantium officiis voluptatum. Qui debitis nobis, ipsum</p>
+        <p>As your digital enablement partner, we apply our talent-first approach to accelerate your digital journey,
+           helping you unleash your potential and unlock unseen opportunities.</p>
           <div className="featured-wrapper">
           {companiesList.map((company, index) => (
 
@@ -131,9 +131,9 @@ export default function Homepage() {
       <footer className='footer'>
         <div className="footer-wrapper">
           <h3>CAREER SEARCH</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Odio exercitationem pariatur quisquam repudiandae repellendus totam enim
-            reprehenderit a perferendis non adipisci.</p>
+          <p>As your digital enablement partner,
+             we apply our talent-first approach to accelerate your digital journey,
+              helping you unleash your potential and unlock unseen opportunities.</p>
           <div className="social-media">
             <a href="#Explore"><i className='fab fa-facebook-f'></i></a>
             <a href="#Explore"><i className='fab fa-twitter'></i></a>
