@@ -77,6 +77,8 @@ export default function ViewApplications() {
             <td className='Job-td'>{application.applied_job_title}</td>
             <td className='Job-td'>
               <button className='verify'>{application.status}</button>
+              <button className='verify'>Chat</button>
+              <button className='verify'>Video</button>
             </td>
           </tr>
         ))}
